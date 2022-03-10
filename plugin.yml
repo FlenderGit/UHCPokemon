@@ -1,0 +1,7 @@
+name: PokemonUHC
+version: 0.1
+author: Flender
+main: fr.flender.main.Main
+commands:
+  setType:
+    description: Allow to change player type
