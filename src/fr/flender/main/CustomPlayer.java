@@ -3,15 +3,39 @@ package fr.flender.main;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
+import fr.flender.type.Neutral;
+
 public class CustomPlayer {
 	
 	private Player player;
-	private Player mate;
+	private CustomPlayer mate;
 	private Type type;
+	private int token;
+	private int kill;
+	
+	public int getKill() {
+		return kill;
+	}
 	
 	
-	public CustomPlayer(Player player) {
+	
+	public int getToken() {
+		return token;
+	}
+
+	public void addToken(int token) {
+		this.token += token;
+	}
+
+	public CustomPlayer(Player player , Handler handler) {
 		this.player = player;
+		this.type = new Neutral(this);
+		this.token = 0;
+		this.mate = null;
+	}
+	
+	public void reduceCooldown() {
+		type.reduceCooldown();
 	}
 
 	public Player getPlayer() {
@@ -22,11 +46,11 @@ public class CustomPlayer {
 		this.player = player;
 	}
 
-	public Player getMate() {
+	public CustomPlayer getMate() {
 		return mate;
 	}
 
-	public void setMate(Player mate) {
+	public void setMate(CustomPlayer mate) {
 		this.mate = mate;
 	}
 

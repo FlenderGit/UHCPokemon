@@ -5,3 +5,9 @@ main: fr.flender.main.Main
 commands:
   setType:
     description: Allow to change player type
+  start:
+    description: Start the game
+  setTeam:
+    description: Create team with two peoples
+  ability:
+    description: View and upgrade your competences
