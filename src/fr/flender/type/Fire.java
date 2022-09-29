@@ -28,6 +28,7 @@ public class Fire extends Type {
 		}
 		
 		
+		
 		if ( test ) {
 			customPlayer.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.FIRE_RESISTANCE, 3600*20, 0, false,false));
 		}
