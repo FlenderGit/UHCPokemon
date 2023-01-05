@@ -9,6 +9,7 @@ import org.bukkit.craftbukkit.v1_8_R1.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scoreboard.Scoreboard;
@@ -58,6 +59,31 @@ public class Main extends JavaPlugin {
 
 		Recipe.loadRecipe();
 
+		ItemStack it1 = new ItemStack(Material.GOLD_INGOT);
+		ItemMeta it1M = it1.getItemMeta();
+		it1M.setDisplayName("Test");
+		it1.setItemMeta(it1M);
+		
+		ItemStack it2 = new ItemStack(Material.GOLD_INGOT);
+		ItemMeta it2M = it2.getItemMeta();
+		it2M.setDisplayName("Test");
+		it2.setItemMeta(it2M);
+		
+		ItemStack it3 = new ItemStack(Material.GOLD_INGOT);
+		ItemMeta it3M = it3.getItemMeta();
+		it3M.setDisplayName("Test1");
+		it3.setItemMeta(it3M);
+		
+		System.out.println("Test with == :");
+		System.out.println("Item pareil : " + (it1.getItemMeta() == it2.getItemMeta()));
+		System.out.println("Item differ : " + (it1.getItemMeta() == it3.getItemMeta()));
+		
+		System.out.println();
+		
+		System.out.println("Test with isSimular() :");
+		System.out.println("Item pareil : " +it1.isSimilar(it2));
+		System.out.println("Item differ : " +it1.isSimilar(it3));
+		
 		Bukkit.getScheduler().runTaskTimer(this, new BukkitRunnable() {	
 			
 						

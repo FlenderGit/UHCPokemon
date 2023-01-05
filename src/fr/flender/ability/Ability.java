@@ -23,7 +23,7 @@ public class Ability {
 	}
 	
 	public List<String> getDescription() {
-		return Arrays.asList((String)description.get(0) , description.get(1) + " " + power + description.get(2) , "Next level : " + (power+powerNext) + description.get(2) );
+		return Arrays.asList((String)description.get(0) , description.get(1) + " " + description.get(2) , "Next level : " +  description.get(2) );
 	}
 	
 	public String getName() {

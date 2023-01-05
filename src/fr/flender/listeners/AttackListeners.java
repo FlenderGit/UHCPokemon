@@ -13,6 +13,7 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
@@ -127,6 +128,8 @@ public class AttackListeners implements Listener {
 		if ( entity instanceof Player) {
 			
 			CustomPlayer player = main.getCustomPlayer((Player)entity);
+						
+			
 			DamageCause cause = event.getCause();
 
 			if ( player.getType() instanceof Steel) {
